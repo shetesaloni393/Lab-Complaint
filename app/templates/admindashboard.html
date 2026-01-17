@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Admin Dashboard</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Chart.js CDN -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<style>
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:#eef2ff;
+  display:flex;
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar{
+  width:230px;
+  background:#4f46e5;
+  color:white;
+  min-height:100vh;
+  padding:20px;
+}
+.sidebar img{
+  width:160px;
+  display:block;
+  margin:0 auto 20px;
+}
+.sidebar a{
+  display:block;
+  padding:12px;
+  margin:8px 0;
+  text-decoration:none;
+  color:white;
+  border-radius:8px;
+  font-weight:bold;
+}
+.sidebar a:hover{
+  background:#4338ca;
+}
+.logout{
+  background:#dc2626;
+}
+.logout:hover{
+  background:#b91c1c;
+}
+
+/* ===== MAIN CONTENT ===== */
+.main{
+  flex:1;
+  padding:25px;
+}
+
+.header{
+  font-size:22px;
+  font-weight:bold;
+  margin-bottom:20px;
+}
+
+/* ===== STAT CARDS ===== */
+.stats{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:15px;
+}
+.card{
+  background:white;
+  padding:15px;
+  border-radius:12px;
+  box-shadow:0 6px 18px rgba(0,0,0,0.12);
+  font-weight:bold;
+  display:flex;
+  justify-content:space-between;
+}
+.number{
+  background:#4f46e5;
+  color:white;
+  padding:5px 12px;
+  border-radius:10px;
+}
+
+/* ===== CHARTS ===== */
+.charts{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:20px;
+  margin-top:30px;
+}
+.chart-box{
+  background:white;
+  padding:20px;
+  border-radius:15px;
+  box-shadow:0 6px 18px rgba(0,0,0,0.12);
+}
+</style>
+</head>
+
+<body>
+
+<!-- ===== SIDEBAR ===== -->
+<div class="sidebar">
+  <img src="sies_ascn_logo.jpg" alt="College Logo">
+
+  <a href="#">📊 Dashboard</a>
+  <a href="#">🛠 Lab Complaints</a>
+  <a href="#">⚖️ ICC Cases</a>
+  <a href="#">🧑‍🔧 Technicians</a>
+  <a href="#">📄 Reports</a>
+  <a href="#" class="logout">🚪 Logout</a>
+</div>
+
+<!-- ===== MAIN CONTENT ===== -->
+<div class="main">
+
+  <div class="header">👨‍💼 Admin Dashboard</div>
+
+  <!-- STAT NUMBERS -->
+  <div class="stats">
+    <div class="card">Total Complaints <span class="number">124</span></div>
+    <div class="card">ICC Cases <span class="number">12</span></div>
+    <div class="card">Resolved <span class="number">95</span></div>
+    <div class="card">Technicians <span class="number">8</span></div>
+  </div>
+
+  <!-- CHARTS -->
+  <div class="charts">
+
+    <div class="chart-box">
+      <h3>Monthly Complaints</h3>
+      <canvas id="barChart"></canvas>
+    </div>
+
+    <div class="chart-box">
+      <h3>Complaint Status</h3>
+      <canvas id="pieChart"></canvas>
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+/* BAR CHART */
+new Chart(document.getElementById("barChart"),{
+  type:"bar",
+  data:{
+    labels:["Jan","Feb","Mar","Apr","May"],
+    datasets:[{
+      data:[20,35,18,40,30],
+    }]
+  }
+});
+
+/* PIE CHART */
+new Chart(document.getElementById("pieChart"),{
+  type:"pie",
+  data:{
+    labels:["Resolved","Pending"],
+    datasets:[{
+      data:[95,29],
+    }]
+  }
+});
+</script>
+
+</body>
+</html>

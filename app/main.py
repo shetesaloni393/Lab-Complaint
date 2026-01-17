@@ -16,3 +16,8 @@ templates = Jinja2Templates(directory="app/templates")
 async def read_root(request: Request):
     # This serves your landing page as the home page
     return templates.TemplateResponse("index.html", {"request": request})
+
+@app.get("/dashboard", response_class=HTMLResponse)
+async def read_root(request: Request):
+    # This serves your landing page as the home page
+    return templates.TemplateResponse("admindashboard.html", {"request": request})

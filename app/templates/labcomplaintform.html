@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>New Lab Complaint</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: #eef2ff;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 50px auto;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+      padding: 20px;
+    }
+
+    .logo {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .logo img {
+      width: 80px;
+      height: auto;
+    }
+
+    .header {
+      text-align: center;
+      font-size: 22px;
+      font-weight: bold;
+      padding: 10px 0 20px;
+      border-bottom: 2px solid #eee;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+      font-size: 14px;
+    }
+
+    label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    select, textarea, input[type="file"] {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+
+    textarea {
+      resize: none;
+      height: 100px;
+    }
+
+    .info-text {
+      font-size: 13px;
+      color: #777;
+      margin: 10px 0;
+    }
+
+    .submit-btn {
+      width: 100%;
+      background: #4f46e5;
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .submit-btn:hover {
+      background: #4338ca;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <div class="logo">
+      <img src="sies_ascn_logo.jpg" alt="Logo">
+    </div>
+
+    <div class="header">🛠 NEW LAB COMPLAINT</div>
+
+    <form>
+
+      <div class="form-group">
+        <label>🏫 Lab Selected</label>
+        <select>
+          <option>Lab 1</option>
+          <option>Lab 2</option>
+          <option>Lab 3</option>
+          <option>Lab 4</option>
+          <option>Lab 5</option>
+          <option>Lab 6</option>
+          <option>Lab 7</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>🧩 Category</label>
+        <select>
+          <option>Hardware Issue</option>
+          <option>Software Issue</option>
+          <option>Network Problem</option>
+          <option>Power/UPS Issue</option>
+          <option>Cleanliness</option>
+          <option>Safety isse</option>
+          <option>others</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>📝 Describe Issue</label>
+        <textarea placeholder="Describe your problem here..."></textarea>
+      </div>
+
+      <div class="form-group">
+        <label>🖼 Upload Image (optional)</label>
+        <input type="file">
+      </div>
+
+      <p class="info-text">
+        Status will update automatically after submission.
+      </p>
+
+      <button type="submit" class="submit-btn">
+        SUBMIT COMPLAINT 📨
+      </button>
+
+    </formgit>
+
+  </div>
+
+</body>
+</html>
