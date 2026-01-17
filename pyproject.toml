@@ -9,6 +9,7 @@ dependencies = [
     "databases>=0.9.0",
     "fastapi[standard]>=0.127.0",
     "jinja2>=3.1.6",
+    "mysql-connector-python>=9.5.0",
     "pydantic>=2.12.5",
     "pymysql>=1.1.2",
     "python-dotenv>=1.2.1",

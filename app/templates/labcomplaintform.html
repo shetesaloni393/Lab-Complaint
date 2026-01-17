@@ -49,12 +49,13 @@
       margin-bottom: 5px;
     }
 
-    select, textarea, input[type="file"] {
+    select, textarea, input[type="file"], input[type="text"], input[type="email"], input[type="tel"] {
       width: 100%;
       padding: 10px;
       border-radius: 8px;
       border: 1px solid #ccc;
       font-size: 14px;
+      box-sizing: border-box;
     }
 
     textarea {
@@ -94,11 +95,39 @@
 
     <div class="header">🛠 NEW LAB COMPLAINT</div>
 
-    <form>
+    <form action="/submit-complaint" method="post" enctype="multipart/form-data">
+
+      <!-- Student Details -->
+      <div class="form-group">
+        <label>👤 Name</label>
+        <input type="text" placeholder="Enter your full name" required>
+      </div>
 
       <div class="form-group">
+        <label>🆔 Roll Number</label>
+        <input type="text" placeholder="Enter your roll number" required>
+      </div>
+
+      <div class="form-group">
+        <label>🎓 Stream</label>
+        <input type="text" placeholder="Eg: Computer Engineering" required>
+      </div>
+
+      <div class="form-group">
+        <label>📧 Email ID</label>
+        <input type="email" placeholder="Enter your email" required>
+      </div>
+
+      <div class="form-group">
+        <label>📱 Phone Number</label>
+        <input type="tel" placeholder="Enter your phone number" required>
+      </div>
+
+      <!-- Complaint Details -->
+      <div class="form-group">
         <label>🏫 Lab Selected</label>
-        <select>
+        <select required>
+          <option value="">Select Lab</option>
           <option>Lab 1</option>
           <option>Lab 2</option>
           <option>Lab 3</option>
@@ -111,20 +140,21 @@
 
       <div class="form-group">
         <label>🧩 Category</label>
-        <select>
+        <select required>
+          <option value="">Select Category</option>
           <option>Hardware Issue</option>
           <option>Software Issue</option>
           <option>Network Problem</option>
           <option>Power/UPS Issue</option>
           <option>Cleanliness</option>
-          <option>Safety isse</option>
-          <option>others</option>
+          <option>Safety Issue</option>
+          <option>Others</option>
         </select>
       </div>
 
       <div class="form-group">
         <label>📝 Describe Issue</label>
-        <textarea placeholder="Describe your problem here..."></textarea>
+        <textarea placeholder="Describe your problem here..." required></textarea>
       </div>
 
       <div class="form-group">
@@ -140,7 +170,7 @@
         SUBMIT COMPLAINT 📨
       </button>
 
-    </formgit>
+    </form>
 
   </div>
 
