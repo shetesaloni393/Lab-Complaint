@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lab & ICC Complaint System</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #eef2ff;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background: #4f46e5;
+      color: white;
+      padding: 20px 40px;
+      text-align: center;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 60px 20px;
+      background: #ffffff;
+    }
+
+    .hero h2 {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      color: #111827;
+    }
+
+    .buttons-container {
+      margin-top: 25px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .drop-btn {
+      padding: 12px 22px;
+      background: #4f46e5;
+      color: white;
+      border-radius: 6px;
+      cursor: pointer;
+      border: none;
+      font-size: 1rem;
+      transition: 0.3s;
+    }
+
+    .drop-btn:hover {
+      background: #4338ca;
+    }
+
+    .dropdown {
+      display: none;
+      position: absolute;
+      background: white;
+      margin-top: 8px;
+      border-radius: 6px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      min-width: 150px;
+      padding: 10px 0;
+      z-index: 100;
+    }
+
+    .dropdown a {
+      display: block;
+      padding: 10px 16px;
+      text-decoration: none;
+      color: #333;
+      font-size: 0.95rem;
+    }
+
+    .dropdown a:hover {
+      background: #eef2ff;
+    }
+
+    .drop-wrapper {
+      position: relative;
+      display: inline-block;
+    }
+
+    .features {
+      padding: 60px 40px;
+      display: grid;
+      gap: 25px;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .feature-card {
+      background: white;
+      border-radius: 10px;
+      padding: 25px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    footer {
+      margin-top: auto;
+      text-align: center;
+      padding: 20px;
+      background: #4f46e5;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Lab & ICCComplaint System</h1>
+</header>
+
+<section class="hero">
+  <h2>Report & Track Lab and ICC Issues Seamlessly</h2>
+  <p>A centralized platform to submit complaints and track resolutions efficiently.</p>
+
+  <div class="buttons-container">
+    
+    <!-- LAB COMPLAINT BUTTON -->
+    <div class="drop-wrapper">
+      <button class="drop-btn" onclick="toggleDropdown('labDrop')">Lab Complaint</button>
+      <div class="dropdown" id="labDrop">
+        <a href="#">As a Student</a>
+        <a href="#">As an Admin</a>
+      </div>
+    </div>
+
+    <!-- ICC COMPLAINT BUTTON -->
+    <div class="drop-wrapper">
+      <button class="drop-btn" onclick="toggleDropdown('iccDrop')">ICC Complaint</button>
+      <div class="dropdown" id="iccDrop">
+        <a href="#">As a Student</a>
+        <a href="#">As an Admin</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+  function toggleDropdown(id) {
+    const dropdown = document.getElementById(id);
+    const allDropdowns = document.querySelectorAll('.dropdown');
+
+    allDropdowns.forEach(d => {
+      if (d !== dropdown) d.style.display = 'none';
+    });
+
+    dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+  }
+
+  // Close dropdown if clicked outside
+  document.addEventListener('click', function(e) {
+    if (!e.target.matches('.drop-btn')) {
+      document.querySelectorAll('.dropdown').forEach(d => d.style.display = 'none');
+    }
+  });
+</script>
+
+</body>
+</html>
