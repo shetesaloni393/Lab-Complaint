@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Confidential ICC Report</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: #eef2ff;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 50px auto;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+      padding: 20px;
+    }
+
+    .logo {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .logo img {
+      width: 80px;
+    }
+
+    .header {
+      text-align: center;
+      font-size: 22px;
+      font-weight: bold;
+      padding: 10px 0 20px;
+      border-bottom: 2px solid #eee;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+      font-size: 14px;
+    }
+
+    label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input[type="text"], input[type="email"], input[type="number"], select, textarea, input[type="file"], input[type="date"] {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+
+    textarea {
+      resize: none;
+      height: 100px;
+    }
+
+    .radio-group {
+      margin-top: 5px;
+    }
+
+    .radio-group label {
+      font-weight: normal;
+      margin-right: 15px;
+    }
+
+    .info-text {
+      font-size: 13px;
+      color: #777;
+      margin: 10px 0;
+    }
+
+    .submit-btn {
+      width: 100%;
+      background: #4f46e5;
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .submit-btn:hover {
+      background: #4338ca;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <div class="logo">
+      <img src="sies_ascn_logo.jpg">
+    </div>
+
+    <div class="header">🧑‍⚖️ CONFIDENTIAL ICC REPORT</div>
+
+    <form>
+
+      <!-- New Personal Detail Fields -->
+      <div class="form-group">
+        <label>👤 Full Name</label>
+        <input type="text" placeholder="Enter your full name" required>
+      </div>
+
+      <div class="form-group">
+        <label>🎓 Roll Number</label>
+        <input type="text" placeholder="Enter your roll number" required>
+      </div>
+
+      <div class="form-group">
+        <label>🏫 Stream</label>
+        <input type="text" placeholder="e.g. BSc IT, B.Com, BA, etc." required>
+      </div>
+
+      <div class="form-group">
+        <label>✉ Email ID</label>
+        <input type="email" placeholder="Enter your official email" required>
+      </div>
+
+      <div class="form-group">
+        <label>📞 Phone Number</label>
+        <input type="number" placeholder="Enter your contact number" required>
+      </div>
+
+      <hr style="margin: 20px 0; border: 0; border-top: 1px solid #ddd;">
+
+      <div class="form-group">
+        <label>🔍 Complaint Type</label>
+        <select required>
+          <option>Harassment</option>
+          <option>Bullying</option>
+          <option>Discrimination</option>
+          <option>Verbal Abuse</option>
+          <option>Physical Threat</option>
+          <option>Misconduct</option>
+          <option>Other</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>🗓 Incident Date</label>
+        <input type="date" required>
+      </div>
+
+      <div class="form-group">
+        <label>📝 Description</label>
+        <textarea placeholder="Briefly describe the incident..." required></textarea>
+      </div>
+
+      <div class="form-group">
+        <label>📎 Attach Evidence</label>
+        <input type="file">
+      </div>
+
+      <div class="form-group">
+        <label>❤️ Require Counseling?</label>
+        <div class="radio-group">
+          <label><input type="radio" name="counseling" required> Yes</label>
+          <label><input type="radio" name="counseling"> No</label>
+        </div>
+      </div>
+
+      <p class="info-text">
+        🔒 Your report is secure and visible only to ICC panel.
+      </p>
+
+      <button type="submit" class="submit-btn">
+        SUBMIT SECURELY 🔐
+      </button>
+
+    </form>
+
+  </div>
+
+</body>
+</html>

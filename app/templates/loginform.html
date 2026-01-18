@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #eef2ff, #fdfefe);
+    }
+
+    .login-box {
+      width: 100%;
+      max-width: 380px;
+      background: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0 18px 45px rgba(0,0,0,0.15);
+      padding: 32px;
+    }
+
+    .logo {
+      text-align: center;
+      margin-bottom: 12px;
+    }
+
+    .logo img {
+      width: 180px;
+    }
+
+    .header {
+      text-align: center;
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 22px;
+      color: #1e1b4b;
+    }
+
+    label {
+      font-weight: 600;
+      font-size: 14px;
+      color: #374151;
+    }
+
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      border-radius: 12px;
+      border: 1px solid #c7d2fe;
+      margin-top: 6px;
+      margin-bottom: 18px;
+      font-size: 14px;
+      outline: none;
+      transition: all 0.2s ease;
+    }
+
+    input:focus {
+      border-color: #4f46e5;
+      box-shadow: 0 0 0 3px rgba(79,70,229,0.2);
+    }
+
+    .roles {
+      margin: 10px 0 24px;
+      font-size: 14px;
+      color: #374151;
+    }
+
+    .roles-title {
+      font-weight: 800;
+      font-size: 15px;
+      color: #1e1b4b;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .role-option {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: #eef2ff;
+      padding: 10px;
+      border-radius: 10px;
+      margin-bottom: 8px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .role-option:hover {
+      background: #dbe1ff;
+    }
+
+    .login-btn {
+      width: 100%;
+      background: linear-gradient(135deg, #4f46e5, #6366f1);
+      color: white;
+      border: none;
+      padding: 14px;
+      border-radius: 14px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .login-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(79,70,229,0.4);
+    }
+
+    .links {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 13px;
+    }
+
+    .links a {
+      color: #4f46e5;
+      text-decoration: none;
+      font-weight: 600;
+      margin: 0 6px;
+    }
+
+    .links a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="login-box">
+
+    <div class="logo">
+      <img src="sies_ascn_logo.jpg" alt="SIES College Logo">
+    </div>
+
+    <div class="header">🔐 Admin Login</div>
+
+    <form onsubmit="return loginUser()">
+      <label>✉ Email Address</label>
+      <input type="email" id="email" placeholder="Enter your email" required>
+
+      <label>🔑 Password</label>
+      <input type="password" id="password" placeholder="••••••••" required>
+
+      <div class="roles">
+        <span class="roles-title">👤 Select Admin Type:</span>
+
+        <label class="role-option">
+          <input type="radio" name="role" value="lab_admin" required>
+          <span><b>Lab Admin</b></span>
+        </label>
+
+        <label class="role-option">
+          <input type="radio" name="role" value="icc_admin">
+          <span><b>ICC Admin</b></span>
+        </label>
+
+      </div>
+
+      <button type="submit" class="login-btn">LOGIN →</button>
+    </form>
+
+    <div class="links">
+      <a href="#">Forgot Password?</a>
+    </div>
+
+  </div>
+
+  <script>
+    function loginUser() {
+      const role = document.querySelector('input[name="role"]:checked');
+      if (!role) {
+        alert("Please select admin type");
+        return false;
+      }
+      alert("Login successful as " + role.value);
+      return false;
+    }
+  </script>
+
+</body>
+</html>
